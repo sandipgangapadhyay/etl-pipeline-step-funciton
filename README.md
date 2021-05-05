@@ -1,2 +1,2 @@
-# etl-pipeline-step-funciton
+# etl-pipeline-step-funciton - test
 This pattern explain how to build a serverless  ETL pipeline to validate, transform, compress, &amp; partition large csv dataset for performance and cost optimization. The pipeline is orchestrated by serverless AWS Step Functions with error handling, retry and end user notification. When a csv file is uploaded to AWS S3 (Simple Storage Service) Bucket source folder, ETL pipeline is triggered. The pipeline validates the content and the schema of the source csv file, transform csv file to compressed parquet format, partition the dataset with year/month/day  and store in a transformed folder for  analytics tools to consume.
