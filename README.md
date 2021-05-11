@@ -18,12 +18,8 @@ partition the dataset with year/month/day  and store in a transformed folder for
 - [Architecture](#Architecture)
 - [High level work flow](#High-level-work-flow)
 - [Deploy](#Deploy)
-- [Test](#Test)
-- [Code](#code)
-- [Tables](#tables)
-- [Custom HTML](#custom-html)
-- [Custom CSS](#custom-css)
-- [Additional Resources](#additional-resources)
+- [Sample Workflow Execution](#Sample-Workflow-Execution)
+
 ## Prerequisites 
 
 * An active AWS account with programmatic access
@@ -104,9 +100,11 @@ existing_bucket_name_in_the_same_region – Provide an existing S3 bcuket name i
 Partitioned Table will be available in AWS Glue Catalog. 
 5. Optionally, Amazon Athena can be used for adhoc query on the partitioned/transformed dataset
 
-### Successful ETL pipeline execution
+---
+## Sample Workflow Execution
+### Successful Execution
 <img src="images/Successful_Execution.png">
 
 
-### ETL pipeline execution with input validation error
+### Failed Executioninput validation error
 <img src="images/Failed_Execution.png">
