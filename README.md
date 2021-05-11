@@ -9,15 +9,28 @@ When a csv file is uploaded to AWS S3 (Simple Storage Service) Bucket source fol
 The pipeline validates the content and the schema of the source csv file, transform csv file to compressed parquet format, 
 partition the dataset with year/month/day  and store in a transformed folder for  analytics tools to consume.
 
+## Sections
+- [Prerequisites](#Prerequisites)
+- [Limitations](#Limitations)
+- [Product Versions](#Product-Versions)
+- [Architecture](#Architecture)
+- [Lists](#lists)
+- [Links](#links)
+- [Images](#images)
+- [Code](#code)
+- [Tables](#tables)
+- [Custom HTML](#custom-html)
+- [Custom CSS](#custom-css)
+- [Additional Resources](#additional-resources)
 ## Prerequisites 
-Prerequisites 
-An active AWS account with programmatic access
-AWS CLI with AWS account configuration, so that you can create AWS resources by deploying cloudformation stack
-Amazon S3 bucket 
-CSV dataset with correct schema ( attached is a sample csv file with correct schema and data type)
-Chrome web browser
-AWS Glue console access
-AWS Step Functions console access
+
+* An active AWS account with programmatic access
+* AWS CLI with AWS account configuration, so that you can create AWS resources by deploying cloudformation stack
+* Amazon S3 bucket 
+* CSV dataset with correct schema ( attached is a sample csv file with correct schema and data type)
+* Web browser
+* AWS Glue console access
+* AWS Step Functions console access
 
 ## Limitations
 AWS Step Functions:
@@ -26,13 +39,15 @@ Execution History: The maximum limit for keeping execution history logs is 90 da
 For more details refer: 
 AWS Step Functions Limits Overview
 
-## Product versions
-Python 3 for AWS Lambda
-AWS Glue version 2#
+## Product Versions
+* Python 3 for AWS Lambda
+* AWS Glue version 2#
 
 ## Architecture
 
+
 <img src="images/ETL_Orchestration.jpg">
+
 
 ## High level work flow
 
