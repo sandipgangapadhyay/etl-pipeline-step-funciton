@@ -1,6 +1,7 @@
 import json
 import boto3
 import botocore
+import os
 
 def lambda_handler(event, context):  
 
@@ -20,10 +21,10 @@ def lambda_handler(event, context):
 
     if status == "FAILURE":
         print("Status is set to failure. Moving to error folder")
-        folder = "error"
+        folder = os.environ['error_folder_name']
     elif status == "SUCCESS":
         print("Status is set to archive. Moving to archive folder")
-        folder = "archive"       
+        folder = os.environ['archive_folder_name']      
     source_file_name_to_copy = bucket_name + "/" + source_location + "/" + file_name
     move_file_name= folder + "/" + file_name
     print("moving file to " + move_file_name)

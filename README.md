@@ -69,8 +69,8 @@ Once ETL pipeline completes, partitioned dataset will be available in transform 
 Partitioned Table will be available in AWS Glue Catalog. 
 Optionally, Amazon Athena can be used for adhoc query on the partitioned/transformed dataset
 
-# AWS Step Functions workflow visualization for a successful ETL pipeline
+## AWS Step Functions workflow visualization for a successful ETL pipeline
 
 
 
-# AWS Step Functions workflow visualization for a ETL pipeline with input validation error
+## AWS Step Functions workflow visualization for a ETL pipeline with input validation error
