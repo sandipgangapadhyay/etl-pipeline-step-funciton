@@ -31,7 +31,7 @@ Python 3 for AWS Lambda
 AWS Glue version 2#
 
 ## Architecture
-
+<img src="images/ETL_Orchestration.png">
 
 ## High level work flow
 
@@ -69,8 +69,9 @@ Once ETL pipeline completes, partitioned dataset will be available in transform 
 Partitioned Table will be available in AWS Glue Catalog. 
 Optionally, Amazon Athena can be used for adhoc query on the partitioned/transformed dataset
 
-## AWS Step Functions workflow visualization for a successful ETL pipeline
+## Successful ETL pipeline execution
+<img src="images/Successful_Execution.png">
 
 
-
-## AWS Step Functions workflow visualization for a ETL pipeline with input validation error
+## ETL pipeline execution with input validation error
+<img src="images/Failed_Execution.png">
