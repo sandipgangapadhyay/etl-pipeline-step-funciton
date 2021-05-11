@@ -18,7 +18,7 @@ partition the dataset with year/month/day  and store in a transformed folder for
 - [Architecture](#Architecture)
 - [High level work flow](#High-level-work-flow)
 - [Deploy](#Deploy)
-- [Sample Workflow Execution](#Sample-Workflow-Execution)
+- [Sample Workflow Execution](#Sample-Workflow-Execution-and-Notification)
 
 ## Prerequisites 
 
@@ -41,7 +41,7 @@ AWS Step Functions Limits Overview
 
 ## Product Versions
 * Python 3 for AWS Lambda
-* AWS Glue version 2#
+* AWS Glue version
 
 ## Architecture
 
@@ -101,10 +101,20 @@ Partitioned Table will be available in AWS Glue Catalog.
 5. Optionally, Amazon Athena can be used for adhoc query on the partitioned/transformed dataset
 
 ---
-## Sample Workflow Execution
+## Sample Workflow Execution and Notification
 ### Successful Execution
 <img src="images/Successful_Execution.png">
 
 
 ### Failed Executioninput validation error
 <img src="images/Failed_Execution.png">
+
+
+
+### Sample Success Notification
+
+{"msg": "File moved to archive/Bank_Transaction.csv", "executionname": "3d16677e-f159-4e42-ac7d-bc1b15b8310d", "status": "SUCCESS"}
+
+### Sample Error Notificaiton
+{"msg": "File moved to error/Bank_Transaction_1.csv", "executionname": "47c4bcb8-9689-4a8d-b5f2-6ebec0e4f408", "status": "FAILURE"}
+
