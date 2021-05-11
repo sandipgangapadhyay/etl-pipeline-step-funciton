@@ -98,12 +98,12 @@ Follow the below step to deploy this pattern using Cloudformation template
 
 4. Execute the following AWS CLI command with pre-configured AWS CLI profile. 
     - Replace "Profile_Name" with a valid aws cli profile name
-    - Replace "stack_name" with Proide a unique stack name
+    - Replace "Stack_Name" with Proide a unique stack name
     - Replace "existing_bucket_name_in_the_same_region" with an existing S3 bcuket name in the same region where the stack will be deployed
 
-    *aws cloudformation package --template-file template.yml --s3-bucket <existing_bucket_name_in_the_same_region> --output-template-file packaged.template --profile <Profile_Name>*
+    *aws cloudformation package --template-file template.yml --s3-bucket <**existing_bucket_name_in_the_same_region**> --output-template-file packaged.template --profile <**Profile_Name**>*
 
-    *aws cloudformation deploy --stack-name <stack_name> --template-file packaged.template  --parameter-overrides file://parameter.json --capabilities CAPABILITY_IAM --profile <Profile_Name>*
+    *aws cloudformation deploy --stack-name <**Stack_Name**> --template-file packaged.template  --parameter-overrides file://parameter.json --capabilities CAPABILITY_IAM --profile <**Profile_Name**>*
 7.	Check the progress of CloudFormation stack deployment in console and wait for it to finish
 
 
