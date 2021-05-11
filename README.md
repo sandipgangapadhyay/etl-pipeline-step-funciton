@@ -96,12 +96,14 @@ Follow the below step to deploy this pattern using Cloudformation template
     - pDatasetSchema - Valid schema of the source dataset. **Note** - For source dataset validation, cerberus python package has been used. For more information, refer [cerberus site](https://cerberus-sanhe.readthedocs.io/usage.html#type)
 
 
-4. Execute the following AWS CLI command with pre-configured AWS CLI profile . Replace “Profile_Name” with a valid aws cli profile name
-stack_name                              – Provide a unique stack name
-existing_bucket_name_in_the_same_region – Provide an existing S3 bcuket name in the same region where the stack will be deployed
+4. Execute the following AWS CLI command with pre-configured AWS CLI profile. 
+    - Replace "Profile_Name" with a valid aws cli profile name
+    - Replace "stack_name" with Proide a unique stack name
+    - Replace "existing_bucket_name_in_the_same_region" with an existing S3 bcuket name in the same region where the stack will be deployed
 
-5.	aws cloudformation package --template-file template.yml --s3-bucket <existing_bucket_name_in_the_same_region> --output-template-file packaged.template --profile <Profile_Name>
-6.	aws cloudformation deploy --stack-name <stack_name> --template-file packaged.template  --parameter-overrides file://parameter.json --capabilities CAPABILITY_IAM --profile <Profile_Name>
+    *aws cloudformation package --template-file template.yml --s3-bucket <existing_bucket_name_in_the_same_region> --output-template-file packaged.template --profile <Profile_Name>*
+
+    *aws cloudformation deploy --stack-name <stack_name> --template-file packaged.template  --parameter-overrides file://parameter.json --capabilities CAPABILITY_IAM --profile <Profile_Name>*
 7.	Check the progress of CloudFormation stack deployment in console and wait for it to finish
 
 
