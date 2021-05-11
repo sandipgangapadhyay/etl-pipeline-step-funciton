@@ -60,7 +60,9 @@ Resources:
     Properties:
       ServiceToken: !GetAtt LambdaFunctionS3Object.Arn
       the_bucket: !Ref S3Bucket
-      dirs_to_create: !Ref pDirsToCreate
+      #dirs_to_create: !Ref pDirsToCreate
+      dirs_to_create: !Join [ ",", [!Ref pSourceFolder,!Ref pStageFolder,!Ref pErrorFolder,!Ref pArchiveFolder,!Ref pTransformFolder]
+
       file_prefix: "glue/gluejob.py"
       file_content: !Sub |
         import sys
