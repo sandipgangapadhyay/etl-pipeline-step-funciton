@@ -31,7 +31,7 @@ Python 3 for AWS Lambda
 AWS Glue version 2#
 
 ## Architecture
-<img src="images/ETL_Orchestration.png">
+<img src="images/ETL_Orchestration.jpg">
 
 ## High level work flow
 
