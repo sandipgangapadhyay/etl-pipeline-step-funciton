@@ -7,6 +7,11 @@ import os
             
         
 def lambda_handler(event, context):
+    
+    ''' 
+    This function validates input raw dataset against schema specified in the env variable
+    '''
+
     print(event)
     result = {}
     s3_resource = boto3.resource('s3')

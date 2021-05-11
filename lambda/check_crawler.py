@@ -3,7 +3,10 @@ import boto3
 import os
 
 def lambda_handler(event, context):
-
+    '''
+    This function checks the status of the Crawler
+    it expects 'crawler_name' key in the event object passed in the function
+    '''
     print(event)
     Crawler_Name=event['crawler_name']
     cnt=int(event['cnt'])+1

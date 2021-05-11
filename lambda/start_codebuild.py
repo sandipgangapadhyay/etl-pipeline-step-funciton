@@ -5,6 +5,9 @@ import cfnresponse
 import os
 
 def lambda_handler(event, context):
+    '''
+    This function starts AWS codebuild project
+    '''
     print("started")
     response_data = {}
     the_event = event['RequestType']

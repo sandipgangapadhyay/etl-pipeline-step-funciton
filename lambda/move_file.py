@@ -5,6 +5,9 @@ import os
 
 def lambda_handler(event, context):  
 
+    '''
+    This function Moves the source dataset to archive/transform/error folder
+    '''
     print(event)
     s3_resource = boto3.resource('s3')
     bucket_name = event['bucket_name']

@@ -2,6 +2,9 @@ import boto3
 import cfnresponse
 def handler(event, context):
     # Init ...
+    '''
+    This function Creates required directory structure inside S3 bucket
+    '''
     the_event = event['RequestType']
     print("The event is: ", str(the_event))
     response_data = {}

@@ -4,6 +4,10 @@ import os
 
 def lambda_handler(event, context):
 
+    '''
+    This function start AWS Step Functions
+    '''
+    
     bucket_name = event["Records"][0]['s3']['bucket']['name'] 
     bucket_arn = event["Records"][0]['s3']['bucket']['arn']
     key_name = event["Records"][0]['s3']['object']['key']
