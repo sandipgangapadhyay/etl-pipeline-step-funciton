@@ -429,7 +429,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt LambdaRole.Arn
-      Handler: archive.lambda_handler
+      Handler: move_file.lambda_handler
       CodeUri: lambda
       Runtime: python3.7
       Timeout: 30

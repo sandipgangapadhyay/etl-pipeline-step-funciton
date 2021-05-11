@@ -17,6 +17,7 @@ partition the dataset with year/month/day  and store in a transformed folder for
 - [Product Versions](#Product-Versions)
 - [Architecture](#Architecture)
 - [High level work flow](#High-level-work-flow)
+- [File Details](#File-Details)
 - [Deploy](#Deploy)
 - [Sample Workflow Execution](#Sample-Workflow-Execution-and-Notification)
 
@@ -51,7 +52,6 @@ AWS Step Functions Limits Overview
 
 ## High level work flow
 
-
 1. User uploads a csv file. AWS S3 Notification event tiggers a AWS Lambda function 
 2. AWS Lambda function starts the step function state machine
 3. AWS Lambda function validates the schema and data type of the raw file
@@ -63,6 +63,20 @@ AWS Step Functions Limits Overview
 9. File moved to error folder if validation fails
 10. AWS SNS sends error notification for any error inside workflow
 11. Amazon Athena used for any adhoc query on partitioned dataset. 
+
+## File Details
+- template.yml - CloudFormation template file
+- parameter.json - File that contains all the parameters and their value. This file needs to updated to change the parameter value as described below
+ - myLayer - This folder contains python packages need to create the required lambda layer for this project
+ - lambda - This folder contains the following lambda function
+    - move_file.py - Moves the source dataset to archive/transform/error folder 
+    - check_crawler.py - Check the status of AWS Glue crawler
+    - start_crawler.py - Start the AWS Glue crawler
+    - start_step_function.py - Starts AWS Step Functions.
+    - start_codebuild.py - Start AWS CodeBuild Project
+    - validation.py - Validates input raw dataset. 
+    - s3object.py - Creates required directory structure inside S3 bucket
+    - notification.py - Sends Success or Error notification at the end of Pipeline.
 
 ## Deploy
 This pattern can be deployed through AWS Cloudformation. See the attachment for the Cloudformation template file.
@@ -106,7 +120,7 @@ Partitioned Table will be available in AWS Glue Catalog.
 <img src="images/Successful_Execution.png">
 
 
-### Failed Executioninput validation error
+### Failed Execution with input validation error
 <img src="images/Failed_Execution.png">
 
 
@@ -115,6 +129,6 @@ Partitioned Table will be available in AWS Glue Catalog.
 
 {"msg": "File moved to archive/Bank_Transaction.csv", "executionname": "3d16677e-f159-4e42-ac7d-bc1b15b8310d", "status": "SUCCESS"}
 
-### Sample Error Notificaiton
+### Sample Error Notification
 {"msg": "File moved to error/Bank_Transaction_1.csv", "executionname": "47c4bcb8-9689-4a8d-b5f2-6ebec0e4f408", "status": "FAILURE"}
 
