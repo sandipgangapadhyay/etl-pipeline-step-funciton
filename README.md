@@ -134,6 +134,10 @@ Partitioned Table will be available in AWS Glue Catalog.
 ### Sample Error Notification
 {"msg": "File moved to error/Bank_Transaction_1.csv", "executionname": "47c4bcb8-9689-4a8d-b5f2-6ebec0e4f408", "status": "FAILURE"}
 
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
 ## License
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
