@@ -127,7 +127,7 @@ Partitioned Table will be available in AWS Glue Catalog.
 
 
 
-### Sample Success Notification
+### Sample Success Notification 
 
 {"msg": "File moved to archive/Bank_Transaction.csv", "executionname": "3d16677e-f159-4e42-ac7d-bc1b15b8310d", "status": "SUCCESS"}
 
